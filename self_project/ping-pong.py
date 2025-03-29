@@ -76,18 +76,28 @@ while game:
             ball.speed_y *= -1
         if ball.rect.x > 700:
             score1 += 1
-            ball.rect.x = 250
-            ball.rect.y = 250
+            ball.rect.x = randint(150,250)
+            ball.rect.y = randint(150,250)
+            ball.speed_x = randint(2,5)
+            ball.speed_y = randint(2,5)
         if ball.rect.x < 0:
             score2 += 1
-            ball.rect.x = 250
-            ball.rect.y = 250
+            ball.rect.x = randint(150,250)
+            ball.rect.y = randint(150,250) 
+            ball.speed_x = randint(2,5)
+            ball.speed_y = randint(2,5)
         if score1 > 9:
             finish = True
             window.blit(player1_win, (200,200))
         if score2 > 9:
             finish = True
             window.blit(player2_win, (200,200))
+        keys_pressed = key.get_pressed()
+        if keys_pressed[K_r]:
+            score1 *= 0
+            score2 *= 0
+            ball.rect.x = 250
+            ball.rect.y = randint(150,250)
     for e in event.get():
         if e.type == QUIT:
             game = False
