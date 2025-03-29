@@ -67,7 +67,7 @@ while game:
         player1_win = font1.render('ИГРОК 1 ПОБЕДИЛ!!!!!!!!!!!!!!', 1, (255,255,0))
         player2_win = font1.render('ИГРОК 2 ПОБЕДИЛ!!!!!!!!!!!!!!', 1, (255,255,0))
         window.blit(text_player1, (0,0))
-        window.blit(text_player2, (450,0))
+        window.blit(text_player2, (428,0))
         if ball.colliderect(player.rect):
             ball.speed_x *= -1
         if ball.colliderect(player1.rect):
